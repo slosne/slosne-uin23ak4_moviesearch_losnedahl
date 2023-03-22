@@ -6,15 +6,18 @@ import SearchForm from "./SearchForm";
 export default function SearchResults({ movies, setSearch, getMovies }) {
   return (
     <>
-      <SearchForm setSearch={setSearch} getMovies={getMovies} />
+      <SearchForm setSearch={setSearch} getMovies={getMovies} movies={movies} />
       <article className="movie-card">
         <h2>Results:</h2>
-        {movies.map((movie, index) => (
-          <Link key={index} to={movie.imdbID.replace(/\s/g, "-").toLowerCase()}>
+        {movies?.map((movie, index) => (
+          <Link
+            key={index}
+            to={movie?.imdbID.replace(/\s/g, "-").toLowerCase()}
+          >
             <MovieCard
-              image={movie.Poster}
-              title={movie.Title}
-              year={movie.Year}
+              image={movie?.Poster}
+              title={movie?.Title}
+              year={movie?.Year}
             />
           </Link>
         ))}

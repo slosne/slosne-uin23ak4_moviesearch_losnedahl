@@ -2,14 +2,17 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-export default function SearchForm({ setSearch, getMovies }) {
+export default function SearchForm({ setSearch, getMovies, movies }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
   const handleSearch = (e) => {
-    setSearch(e.target.value);
-    console.log(e.target.value);
+    const value = e.target.value;
+    if (value.length >= 3) {
+      setSearch(value);
+      getMovies();
+    }
   };
 
   return (
@@ -23,9 +26,6 @@ export default function SearchForm({ setSearch, getMovies }) {
         placeholder="Search.."
         onChange={handleSearch}
       />
-      <button type="submit" onClick={getMovies}>
-        Search
-      </button>
     </form>
   );
 }

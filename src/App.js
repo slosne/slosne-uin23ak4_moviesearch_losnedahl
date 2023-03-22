@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     getMovies();
-  }, []);
+  }, [search]);
 
   console.log(movies);
 
