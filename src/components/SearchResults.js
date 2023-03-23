@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 import SearchForm from "./SearchForm";
 
-export default function SearchResults({ movies, setSearch, getMovies }) {
+export default function SearchResults({
+  movies,
+  setSearch,
+  getMovies,
+  details,
+}) {
   return (
     <>
       <SearchForm setSearch={setSearch} getMovies={getMovies} movies={movies} />
@@ -15,7 +20,10 @@ export default function SearchResults({ movies, setSearch, getMovies }) {
               image={movie?.Poster}
               title={movie?.Title}
               year={movie?.Year}
-              id={movie?.imdbID}
+              awards={details[index]?.Awards}
+              genre={details[index]?.Genre}
+              director={details[index]?.Director}
+              cast={details[index]?.Actors}
             />
             <Link to={movie?.imdbID.replace(/\s/g, "-").toLowerCase()}>
               Read more
