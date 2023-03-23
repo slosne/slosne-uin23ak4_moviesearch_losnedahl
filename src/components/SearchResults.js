@@ -15,6 +15,7 @@ export default function SearchResults({ movies, setSearch, getMovies }) {
               image={movie?.Poster}
               title={movie?.Title}
               year={movie?.Year}
+              id={movie?.imdbID}
             />
             <Link to={movie?.imdbID.replace(/\s/g, "-").toLowerCase()}>
               Read more
