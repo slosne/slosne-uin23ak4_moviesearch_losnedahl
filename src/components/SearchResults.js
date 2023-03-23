@@ -10,16 +10,19 @@ export default function SearchResults({ movies, setSearch, getMovies }) {
       <article className="movie-card">
         <h2>Results:</h2>
         {movies?.map((movie, index) => (
-          <Link
-            key={index}
-            to={movie?.imdbID.replace(/\s/g, "-").toLowerCase()}
-          >
+          <div>
             <MovieCard
               image={movie?.Poster}
               title={movie?.Title}
               year={movie?.Year}
             />
-          </Link>
+            <Link
+              key={index}
+              to={movie?.imdbID.replace(/\s/g, "-").toLowerCase()}
+            >
+              Read more
+            </Link>
+          </div>
         ))}
       </article>
     </>
