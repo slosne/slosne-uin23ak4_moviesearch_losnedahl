@@ -39,9 +39,6 @@ function App() {
     fetchDetails();
   }, [movies]);
 
-  console.log(movies);
-  console.log(details);
-
   return (
     <Layout>
       <Routes>
