@@ -31,8 +31,6 @@ export default function MovieDetails({ movies }) {
     return null;
   }
 
-  console.log(details);
-
   return (
     <section>
       <MovieDetailCard
