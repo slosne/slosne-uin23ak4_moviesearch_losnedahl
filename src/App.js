@@ -8,7 +8,6 @@ import Layout from "./components/Layout";
 function App() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("james bond");
-  const [details, setDetails] = useState([]);
 
   const getMovies = async () => {
     const response = await fetch(
@@ -21,23 +20,6 @@ function App() {
   useEffect(() => {
     getMovies();
   }, [search]);
-
-  const getDetailedMovies = async (imdbID) => {
-    const response = await fetch(
-      `http://www.omdbapi.com/?apikey=3bc426b0&i=${imdbID}`
-    );
-    const data = await response.json();
-    setDetails(data);
-  };
-
-  useEffect(() => {
-    const fetchDetails = async () => {
-      movies.forEach((movie) => {
-        getDetailedMovies(movie.imdbID);
-      });
-    };
-    fetchDetails();
-  }, [movies]);
 
   return (
     <Layout>
