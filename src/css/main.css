@@ -1,5 +1,13 @@
-body {
-  background-color: beige;
+.movie-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvbWFpbi5zY3NzIiwibWFpbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx1QkFBQTtBQ0NKIiwiZmlsZSI6Im1haW4uY3NzIn0= */
+.movie-card {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=main.css.map */

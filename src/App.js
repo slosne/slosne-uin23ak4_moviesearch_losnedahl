@@ -1,4 +1,5 @@
 import "./App.css";
+import "./css/main.css";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import SearchResults from "./components/SearchResults";
