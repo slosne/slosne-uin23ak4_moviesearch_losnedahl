@@ -21,6 +21,8 @@ function App() {
     getMovies();
   }, [search]);
 
+  console.log(movies);
+
   return (
     <Layout>
       <Routes>
