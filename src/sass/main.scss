@@ -115,9 +115,14 @@ header{
         max-width: 300px;
     }
 
+    .basic-button{
+        border:none;
+        width: 100%;
+        font-size: 1rem;
+    }
+
     .basic-button:hover{
-        transform: scale(1.02);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-decoration: underline;
     }
 
     
