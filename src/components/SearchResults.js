@@ -8,12 +8,18 @@ export default function SearchResults({
   getMovies,
   details,
 }) {
+  const filteredItems = movies?.filter(
+    (item) => item?.Poster !== "N/A" && typeof item?.Poster !== "undefined"
+  );
+
+  console.log(filteredItems);
+
   return (
     <>
       <SearchForm setSearch={setSearch} getMovies={getMovies} movies={movies} />
       <h2>Results:</h2>
       <div className="article-container">
-        {movies?.map((movie, index) => (
+        {filteredItems?.map((movie, index) => (
           <MovieCard
             key={index}
             image={movie?.Poster}
