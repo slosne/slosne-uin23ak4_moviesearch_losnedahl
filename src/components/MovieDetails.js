@@ -27,10 +27,6 @@ export default function MovieDetails({ movies }) {
     fetchDetails();
   }, [movie]);
 
-  if (details.Poster === "N/A" || details.Poster === undefined) {
-    return null;
-  }
-
   return (
     <section>
       <MovieDetailCard

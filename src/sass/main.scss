@@ -6,6 +6,18 @@
 
 .movie-card{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 40%;
+}
+
+.article-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.movie-card img{
+    width: 100%;
 }
