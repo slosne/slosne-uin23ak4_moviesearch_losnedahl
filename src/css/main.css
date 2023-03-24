@@ -9,6 +9,13 @@
   flex-direction: column;
   flex-wrap: wrap;
 }
+.main-container form {
+  width: 100%;
+  text-align: center;
+}
+.main-container h2 {
+  text-align: center;
+}
 
 .article-container {
   display: flex;
