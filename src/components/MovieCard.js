@@ -21,8 +21,11 @@ export default function MovieCard({
         <p>{cast}</p>
         <p>{genre}</p>
         <p>Awards: {awards}</p>
-        <Link to={movie?.imdbID.replace(/\s/g, "-").toLowerCase()}>
-          <button className="basic-button">Read more</button>
+        <Link
+          to={movie?.imdbID.replace(/\s/g, "-").toLowerCase()}
+          className="basic-button"
+        >
+          Read more
         </Link>
       </div>
     </article>
