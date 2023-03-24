@@ -86,13 +86,29 @@ header{
     padding: 1rem;
     width: 40%;
     border-radius: 10px;
-    display: inline-block;
+    display:inline-block;
     text-decoration: none;
     text-align: center;
 }
 
+.basic-button:hover{
+    text-decoration: underline;
+}
+
+footer{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid lightgrey;
+}
+
 @media screen and (min-width: 720px) {
 
+    body{
+        max-width: 1400px;
+        margin: 0 auto;
+    }
     .article-container{
         flex-direction: row;
         flex-wrap: wrap;
@@ -121,8 +137,33 @@ header{
         font-size: 1rem;
     }
 
-    .basic-button:hover{
-        text-decoration: underline;
+    header{
+        height: 30vh;
+    }
+
+    .detail-article-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4rem;
+        padding: 2rem;
+    }
+
+    .detail-text-container{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .details{
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .detail-headline{
+        margin-top: 2rem;
+
     }
 
     

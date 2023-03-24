@@ -7,7 +7,9 @@ export default function Layout({ children }) {
         <h1>Moviefinder</h1>
       </header>
       <main>{children}</main>
-      <footer>&copy; Stine Losnedahl</footer>
+      <footer>
+        <p>&copy; Stine Losnedahl</p>
+      </footer>
     </div>
   );
 }

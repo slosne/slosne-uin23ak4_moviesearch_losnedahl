@@ -18,10 +18,10 @@ export default function MovieDetailCard({
 }) {
   return (
     <article>
-      <h2>
+      <h2 className="detail-headline">
         {title} ({year})
       </h2>
-      <div className="detail-flex-container">
+      <div className="detail-article-container">
         <img src={image} alt={title} />
         <div className="detail-text-container">
           <h3>General info</h3>
@@ -34,14 +34,16 @@ export default function MovieDetailCard({
           <p>Runtime: {runtime}</p>
         </div>
       </div>
-      <h3>Plot</h3>
-      <p>{plot}</p>
-      <h3>Ratings</h3>
-      <p>Imdb rating: {rating}/10</p>
-      <p>{votes} ratings</p>
-      <Link to="/">
-        <button>Back</button>
-      </Link>
+      <div className="details">
+        <h3>Plot</h3>
+        <p>{plot}</p>
+        <h3>Ratings</h3>
+        <p>Imdb rating: {rating}/10</p>
+        <p>{votes} ratings</p>
+        <Link to="/" className="basic-button">
+          Back
+        </Link>
+      </div>
     </article>
   );
 }
