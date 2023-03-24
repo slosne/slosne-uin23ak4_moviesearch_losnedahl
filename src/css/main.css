@@ -66,11 +66,11 @@ img {
 }
 
 header {
-  height: 20vh;
+  height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ededed;
+  background-color: #8f5e5e;
 }
 header h1 {
   text-transform: uppercase;
@@ -130,9 +130,6 @@ footer {
     border: none;
     width: 100%;
     font-size: 1rem;
-  }
-  header {
-    height: 30vh;
   }
   .detail-article-container {
     display: flex;
