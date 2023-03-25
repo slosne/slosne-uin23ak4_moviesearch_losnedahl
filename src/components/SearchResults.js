@@ -8,11 +8,10 @@ export default function SearchResults({
   getMovies,
   details,
 }) {
+  //Some movies have N/A as Poster url. If so, filter out and do not display at all:
   const filteredItems = movies?.filter(
     (item) => item?.Poster !== "N/A" && typeof item?.Poster !== "undefined"
   );
-
-  console.log(filteredItems);
 
   return (
     <>

@@ -11,6 +11,7 @@ function App() {
   const [search, setSearch] = useState("james bond");
   const [details, setDetails] = useState([]);
 
+  // First fetch to get list of movies based on movie title param and pass to movies useState:
   const getMovies = async () => {
     const response = await fetch(
       `http://www.omdbapi.com/?apikey=3bc426b0&s=${search}&p=10&type=movie`
@@ -18,6 +19,8 @@ function App() {
     const data = await response.json();
     setMovies(data.Search);
   };
+
+  // Second fetch to get more details of each movie from other endpoint based on ID from first fetched data and pass to details state.
   const getDetails = async () => {
     const data = await Promise.all(
       movies.map(async (movie) => {

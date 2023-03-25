@@ -10,6 +10,7 @@ export default function MovieDetails({ movies }) {
 
   const [details, setDetails] = useState([]);
 
+  //Fetch details to use upon "read more" on each movie
   const getDetailedMovies = async () => {
     if (movie) {
       const response = await fetch(
@@ -25,6 +26,7 @@ export default function MovieDetails({ movies }) {
       await getDetailedMovies();
     };
     fetchDetails();
+    // eslint-disable-next-line
   }, [movie]);
 
   return (

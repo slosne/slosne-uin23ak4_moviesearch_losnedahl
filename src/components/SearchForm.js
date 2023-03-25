@@ -7,6 +7,7 @@ export default function SearchForm({ setSearch, getMovies, movies }) {
     e.preventDefault();
   };
 
+  //If user enters 3 or more chars, pass value to search state and render movies.
   const handleSearch = (e) => {
     const value = e.target.value;
     if (value.length >= 3) {
