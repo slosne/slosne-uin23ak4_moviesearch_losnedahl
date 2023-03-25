@@ -21,29 +21,27 @@ function App() {
   };
 
   // Second fetch to get more details of each movie from other endpoint based on ID from first fetched data and pass to details state.
-  const getDetails = async () => {
-    const data = await Promise.all(
-      movies.map(async (movie) => {
-        const response = await fetch(
-          `http://www.omdbapi.com/?apikey=3bc426b0&i=${movie.imdbID}`
+  useEffect(() => {
+    if (movies.length > 0) {
+      const getDetails = async () => {
+        const data = await Promise.all(
+          movies.map(async (movie) => {
+            const response = await fetch(
+              `http://www.omdbapi.com/?apikey=3bc426b0&i=${movie.imdbID}`
+            );
+            return response.json();
+          })
         );
-        return response.json();
-      })
-    );
-    setDetails(data);
-  };
+        setDetails(data);
+      };
+      getDetails();
+    }
+  }, [movies]);
 
   useEffect(() => {
     getMovies();
     // eslint-disable-next-line
   }, [search]);
-
-  useEffect(() => {
-    if (movies.length > 0) {
-      getDetails();
-    }
-    // eslint-disable-next-line
-  }, [movies]);
 
   return (
     <Layout>
@@ -59,7 +57,10 @@ function App() {
             />
           }
         />
-        <Route path=":slug" element={<MovieDetails movies={movies} />} />
+        <Route
+          path=":slug"
+          element={<MovieDetails movies={movies} details={details} />}
+        />
       </Routes>
     </Layout>
   );
