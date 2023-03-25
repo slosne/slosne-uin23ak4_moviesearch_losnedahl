@@ -100,4 +100,4 @@ W3schools(u.å). Sass @mixin and @include.
 https://www.w3schools.com/sass/sass_mixin_include.php
 
 
-*/
+ */
