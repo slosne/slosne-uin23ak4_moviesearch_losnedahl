@@ -1,3 +1,5 @@
+Student assignment where we were asked to fetch movie data from OMDB's public API and to use two different endpoints to display movie list and movie details. Front page should be set to James Bond by default. Search field should search automaticly when user inputs 3 or more characters. Each movie should have a read more with details.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
