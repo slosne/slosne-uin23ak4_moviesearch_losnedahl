@@ -32,12 +32,14 @@ function App() {
 
   useEffect(() => {
     getMovies();
+    // eslint-disable-next-line
   }, [search]);
 
   useEffect(() => {
     if (movies.length > 0) {
       getDetails();
     }
+    // eslint-disable-next-line
   }, [movies]);
 
   return (
