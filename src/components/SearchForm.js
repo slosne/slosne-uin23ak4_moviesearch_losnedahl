@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-export default function SearchForm({ setSearch, getMovies, movies }) {
+export default function SearchForm({ setSearch, getMovies }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };

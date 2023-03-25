@@ -12,6 +12,7 @@ function App() {
   const [details, setDetails] = useState([]);
 
   // First fetch to get list of movies based on movie title param and pass to movies useState:
+  // Passing getMovies as prop to earchForm further down, to render upon change in search field.
   const getMovies = async () => {
     const response = await fetch(
       `http://www.omdbapi.com/?apikey=3bc426b0&s=${search}&p=10&type=movie`
@@ -20,7 +21,8 @@ function App() {
     setMovies(data.Search);
   };
 
-  // Second fetch to get more details of each movie from other endpoint based on ID from first fetched data and pass to details state.
+  // Second fetch to get more details of each movie from other endpoint based on ID from first fetched data
+  // It then passes data to details state and updates details when movies state changes.
   useEffect(() => {
     if (movies.length > 0) {
       const getDetails = async () => {

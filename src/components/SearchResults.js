@@ -15,7 +15,7 @@ export default function SearchResults({
 
   return (
     <>
-      <SearchForm setSearch={setSearch} getMovies={getMovies} movies={movies} />
+      <SearchForm setSearch={setSearch} getMovies={getMovies} />
       <h2>Results:</h2>
       <div className="article-container">
         {filteredItems?.map((movie, index) => (
