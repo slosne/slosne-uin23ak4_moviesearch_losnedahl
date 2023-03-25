@@ -14,7 +14,7 @@ export default function MovieCard({
   return (
     <article className="movie-card">
       <img src={image} alt={title} />
-      <div className="card-text">
+      <section className="card-text">
         <h4>{title}</h4>
         <h5>({year})</h5>
         <p>Directed by {director}</p>
@@ -27,7 +27,7 @@ export default function MovieCard({
         >
           Read more
         </Link>
-      </div>
+      </section>
     </article>
   );
 }

@@ -18,7 +18,10 @@ export default function SearchForm({ setSearch, getMovies, movies }) {
   return (
     <form className="search-form" onSubmit={handleSubmit}>
       <label htmlFor="title">
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
+        <FontAwesomeIcon
+          icon={faMagnifyingGlass}
+          style={{ fontSize: "1.3rem" }}
+        />
       </label>
       <input
         type="search"

@@ -23,7 +23,7 @@ export default function MovieDetailCard({
       </h2>
       <div className="detail-article-container">
         <img src={image} alt={title} />
-        <div className="detail-text-container">
+        <section className="detail-text-container">
           <h3>General info</h3>
           <p>Genre: {genre}</p>
           <p>Directed by: {director}</p>
@@ -32,9 +32,9 @@ export default function MovieDetailCard({
           <p>Original language: {language}</p>
           <p>Awards: {awards}</p>
           <p>Runtime: {runtime}</p>
-        </div>
+        </section>
       </div>
-      <div className="details">
+      <section className="details">
         <h3>Plot</h3>
         <p>{plot}</p>
         <h3>Ratings</h3>
@@ -43,7 +43,7 @@ export default function MovieDetailCard({
         <Link to="/" className="basic-button">
           Back
         </Link>
-      </div>
+      </section>
     </article>
   );
 }

@@ -1,22 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500&family=Rubik:wght@400;600;700&display=swap');
+@import "colors";
+
+@mixin flex-column($direction, $gap, $mb, $mt, $ml, $mr) {
+    display: flex;
+    flex-direction: $direction;
+    gap: $gap;
+    margin-bottom: $mb;
+    margin-top: $mt;
+    margin-left: $ml;
+    margin-right: $mr;
+}
+
+// ---------------------------------------------- //
+// ------------- SMALL SCREENS ------------------ //
+// ---------------------------------------------- //
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
 }
 
 .main-container{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 1rem;
+    @include flex-column(column, 0, 1rem, 1rem, 1rem, 1rem);
     form{
-        display: flex;
-        gap: 0.3rem;
+        @include flex-column(row, 0.3rem, 1rem, 2rem, 0, 0);
         width: 100%;
         text-align: center;
         justify-content: center;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
         padding: 1rem;
         input{
             height: 1.7rem;
@@ -32,29 +44,36 @@
     }
 }
 
+header{
+    @include flex-column(row, 0, 0, 0, 0, 0);
+    height: 30vh;
+    align-items: center;
+    justify-content: center;
+    background-color: $myRed;
+    h1{
+        text-transform: uppercase;
+        letter-spacing: 0.5rem;
+        font-size: 2rem;
+        color: $myWhite;
+    }
+}
+
 main{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    @include flex-column(column, 2rem, 0, 0, 0, 0);
 }
 
 .article-container{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    @include flex-column(column, 2rem, 0, 0, 0, 0);
 }
 
 .movie-card{
-    display: flex;
-    flex-direction: column;
-    background-color: #ededed;
+    @include flex-column(column, 0, 0, 0, 0, 0);
+    background-color: $myLightGray;
     padding: 1rem;
 }
 
 .card-text{
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+    @include flex-column(column, 1.2rem, 0, 0, 0, 0);
     align-items: center;
     justify-content: center;
     padding: 1rem;
@@ -65,24 +84,15 @@ img{
     height: auto;
 }       
 
-header{
-    height: 30vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #8f5e5e;
-    h1{
-        text-transform: uppercase;
-        letter-spacing: 0.5rem;
-        font-size: 2rem;
-    }
+.link{
+    text-decoration: none;
 }
 
 .basic-button{
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border: 1px solid black;
-    color: black;
+    border: 1px solid $myBlack;
+    color: $myBlack;
     padding: 1rem;
     width: 40%;
     border-radius: 10px;
@@ -96,12 +106,16 @@ header{
 }
 
 footer{
+    @include flex-column(row, 0, 0, 3rem, 0, 0);
     height: 100px;
-    display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid $myLightGray;
 }
+
+// ---------------------------------------- //
+// ----------- MIDSIZE SCREENS ------------ //
+// ---------------------------------------- //
 
 @media screen and (min-width: 720px) {
 
@@ -110,51 +124,37 @@ footer{
         margin: 0 auto;
     }
     .article-container{
-        flex-direction: row;
+        @include flex-column(row, 2rem, 0, 0, 0, 0); 
         flex-wrap: wrap;
-        gap: 2rem;
     }
 
     .movie-card{
-        display: flex;
-        flex-direction: row;
+        @include flex-column(row, 0, 0, 0, 0, 0);
         width: 100%;
         border-radius: 7px;
         font-size: 0.8rem;
-    }
-
-    form{
-        gap: 0.5rem;
-    }
-
-    img{
-        max-width: 300px;
+        box-shadow: 0 25px 40px 0 $myBoxShadow;
     }
 
     .basic-button{
         border:none;
-        width: 100%;
-        font-size: 1rem;
+        width: 100px;
+        border: 1px solid $myDarkGray;
     }
 
     .detail-article-container{
-        display: flex;
+        @include flex-column(row, 4rem, 0, 0, 0, 0);
         flex-wrap: wrap;
-        gap: 4rem;
         padding: 2rem;
     }
 
     .detail-text-container{
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
+        @include flex-column(column, 2rem, 0, 0, 0, 0);
     }
 
     .details{
+        @include flex-column(column, 2rem, 0, 0, 0, 0);
         padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
     }
 
     .detail-headline{
@@ -162,10 +162,23 @@ footer{
 
     }
 
+    form{
+        gap: 0.5rem;
+    }
+
     
 }
 
+// ---------------------------------------- //
+// ----------- LARGER SCREENS ------------ //
+// ---------------------------------------- //
+
+
 @media screen and (min-width: 1300px) {
+
+    .article-container{
+        justify-content: space-evenly;
+    }
 
     .movie-card{
         width: 40%;
@@ -173,10 +186,6 @@ footer{
 
     img{
         max-width: 40%;
-    }
-
-    .article-container{
-        justify-content: space-evenly;
     }
 
     
